@@ -1,51 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>K.G.M. NIRMAL | Software Engineer</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
     <nav>
-        <div class="logo">PORTFOLIO</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">K.G.M. NIRMAL</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <header id="home">
-        <h1>Hi, I'm Madhusha Nirmal</h1>
-        <p>Software Developer | Tech Enthusiast</p>
+        <div id="particles-js"></div>
+        <div class="header-content">
+            <h1>Hi, I'm MADHUSHA NIRMAL</h1>
+            <p class="subtitle">Software Engineering Undergraduate</p>
+        </div>
+
     </header>
 
     <section id="about">
         <h2>About Me</h2>
-        <p>I'm a student focused on building real-world systems using Flutter, Python, and Web Tech.</p>
+        <p>Dedicated Software Engineering student at the Open University of Sri Lanka with a strong foundation in
+            Full-Stack development. Experienced in building mobile applications with Java and web platforms using React.
+            Focused on clean code and efficient database management.</p>
+
+        <div class="skills-container">
+            <div class="skill-tag">Java</div>
+            <div class="skill-tag">Python</div>
+            <div class="skill-tag">React.js</div>
+            <div class="skill-tag">MySQL</div>
+            <div class="skill-tag">Android Studio</div>
+        </div>
+
+        <div class="education-section">
+        <h2>Education</h2>
+        <div class="edu-item">
+            <h3>B.S.E (Hons) in Software Engineering</h3>
+            <p><strong>Open University of Sri Lanka (OUSL)</strong> | 2023 – Expected 2027</p>
+            <p><em>Current Status: 3rd Year Undergraduate</em></p>
+            <p>Relevant Coursework: Data Structures, Python, Android Design, DBMS.</p>
+        </div>
+        </div>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
+    <section id="projects" class="projects-section">
+        <h2>Technical Projects</h2>
         <div class="project-grid">
             <div class="card">
-                <h3>Project One</h3>
-                <p>A cool app built with Firebase.</p>
-                <a href="#">View Code</a>
+                <div class="card-header">
+                    <h3>CashTag</h3>
+                    <span class="tech-stack">Android | Java | OCR</span>
+                </div>
+                <ul>
+                    <li>Mobile Expense Tracker with OCR support to automate bill reading.</li>
+                    <li>Designed UI/UX and implemented local data storage for offline use.</li>
+                </ul>
+                <a href="https://github.com/Madhusha2003" class="btn">View on GitHub</a>
             </div>
+
             <div class="card">
-                <h3>Project Two</h3>
-                <p>Automation script using Python.</p>
-                <a href="#">View Code</a>
+                <div class="card-header">
+                    <h3>DineEase</h3>
+                    <span class="tech-stack">React.js | Tailwind | MySQL</span>
+                </div>
+                <ul>
+                    <li>Web-Based Restaurant System for management and reservations.</li>
+                    <li>Normalized MySQL database for efficient menu and order handling.</li>
+                </ul>
+                <a href="https://github.com/Madhusha2003" class="btn">View on GitHub</a>
             </div>
         </div>
     </section>
 
+
     <footer id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: yourname@example.com</p>
-    </footer
+        <div class="footer-content">
+            <h2>Let's Connect</h2>
+            <p>Currently seeking Internship opportunities for 2026</p>
+
+            <div class="social-links">
+                <a href="https://github.com/Madhusha2003" target="_blank" class="social-icon">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/madhusha-nirmal-815b50269" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://wa.me/94786946823" target="_blank" class="social-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 K.G.M. Nirmal | Built with <i class="fas fa-heart" style="color: #e74c3c;"></i> in Sri
+                    Lanka</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>

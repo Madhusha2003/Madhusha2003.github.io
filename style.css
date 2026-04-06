@@ -1,67 +1,252 @@
-/* General Styles */
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --text: #333;
+    --light: #f4f7f6;
+}
+
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Inter', -apple-system, sans-serif;
     margin: 0;
+    color: var(--text);
     line-height: 1.6;
-    color: #333;
     scroll-behavior: smooth;
 }
 
-/* Navigation */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    background: #2c3e50;
-    color: white;
-    position: sticky;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    /* Subtle thin line at the bottom */
+    position: fixed;
+    /* Keeps it at the top while scrolling */
+    width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
 }
 
-nav ul {
+.nav-container {
+    max-width: 1200px;
+    /* Limits width on large screens */
+    margin: 0 auto;
+    /* Centers the container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    /* Adjust top/bottom and left/right spacing */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 35px;
+    /* Creates the space between the links */
 }
 
-nav ul li { margin-left: 20px; }
-
-nav ul li a {
-    color: white;
+.nav-links a {
     text-decoration: none;
-    font-weight: bold;
+    color: #444;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
 }
 
-/* Header */
+/* Hover effect to make it feel interactive */
+.nav-links a:hover {
+    color: var(--accent);
+    /* Uses the blue accent we set earlier */
+}
+
+/* Adjust the Header top padding so it doesn't hide under the sticky nav */
 header {
-    height: 60vh;
+    padding-top: 120px;
+}
+
+header {
+    position: relative;
+    /* Required for the particles to stay inside */
+    background: #000000;
+    height: 80vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #f4f4f4;
-    text-align: center;
+    overflow: hidden;
 }
 
-/* Project Grid */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* Background layer */
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    /* Sits on top of particles */
+    text-align: center;
+    color: white;
+}
+
+section {
+    padding: 40px 10%;
+}
+
+.alt-bg {
+    background: var(--light);
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skill-tag {
+    background: var(--accent);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+;
+}
+
+.skill-tag:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.education-section {
+    padding-top: 20px;
+}
+
+.edu-item {
+    padding: 10px;
+}
+
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 2rem 5%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .card {
     border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 25px;
+    border-radius: 12px;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    border-color: var(--accent);
 }
 
-section { padding: 4rem 5%; }
+.card-header h3 {
+    margin: 0;
+    color: var(--accent);
+}
+
+.tech-stack {
+    font-size: 0.8rem;
+    color: #777;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background: #1a252f;
+    color: white;
+    padding: 60px 10% 20px;
+    text-align: center;
+}
+
+.footer-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Subtle line under the title */
+.footer-content h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--accent);
+    margin: 10px auto;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Bouncy effect */
+    display: inline-block;
+}
+
+/* The Hover Animation */
+.social-icon:hover {
+    color: var(--accent);
+    transform: translateY(-10px) scale(1.2);
+    text-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #bdc3c7;
+}
+
+/* Heartbeat animation for the heart icon */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fa-heart {
+    animation: heartbeat 1.5s infinite;
+    display: inline-block;
+}
