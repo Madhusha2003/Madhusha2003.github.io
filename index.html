@@ -4,13 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K.G.M. NIRMAL | Software Engineer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>K.G.M. NIRMAL</title>
+    <!-- Google Fonts: Outfit and Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <nav>
+    <!-- ==============================================
+         NAVIGATION BAR
+         ============================================== -->
+    <nav class="navbar">
         <div class="nav-container">
             <div class="logo">K.G.M. NIRMAL</div>
             <ul class="nav-links">
@@ -22,93 +33,170 @@
         </div>
     </nav>
 
-    <header id="home">
+    <!-- ==============================================
+         HERO SECTION (Terminal Style)
+         ============================================== -->
+    <header id="home" class="hero">
+        <!-- Particles Background Container -->
         <div id="particles-js"></div>
-        <div class="header-content">
-            <h1>Hi, I'm MADHUSHA NIRMAL</h1>
-            <p class="subtitle">Software Engineering Undergraduate</p>
-        </div>
 
+        <div class="hero-content">
+            <div class="terminal-box">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <div class="terminal-title">guest@nirmal-portfolio:~</div>
+                </div>
+                <div class="terminal-body">
+                    <p class="prompt">$ whoami</p>
+                    <p class="output text-highlight">Hi, I'm MADHUSHA NIRMAL</p>
+                    <p class="prompt">$ get_title</p>
+                    <br>
+                    <p class="output typing-text" id="typewriter"></p>
+                    <p class="prompt blink-cursor">_</p>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Dedicated Software Engineering student at the Open University of Sri Lanka with a strong foundation in
-            Full-Stack development. Experienced in building mobile applications with Java and web platforms using React.
-            Focused on clean code and efficient database management.</p>
+    <main>
+        <!-- ==============================================
+             ABOUT & SKILLS SECTION
+             ============================================== -->
+        <section id="about" class="section">
+            <div class="section-content">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <!-- Bio Text -->
+                    <div class="bio">
+                        <p>
+                            Dedicated Software Engineering student at the Open University of Sri Lanka with a strong
+                            foundation in Full-Stack development. Experienced in building mobile applications with Java
+                            and web platforms using React. Focused on clean code, efficient database management, and
+                            building user-centric solutions.
+                        </p>
 
-        <div class="skills-container">
-            <div class="skill-tag">Java</div>
-            <div class="skill-tag">Python</div>
-            <div class="skill-tag">React.js</div>
-            <div class="skill-tag">MySQL</div>
-            <div class="skill-tag">Android Studio</div>
-        </div>
+                        <!-- Education Subsection -->
+                        <div class="education">
+                            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                            <div class="edu-item">
+                                <h4>B.S.E (Hons) in Software Engineering</h4>
+                                <span>Open University of Sri Lanka (OUSL) | 2023 – Expected 2027</span>
+                                <p class="edu-status">Current Status: 3rd Year Undergraduate</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="education-section">
-        <h2>Education</h2>
-        <div class="edu-item">
-            <h3>B.S.E (Hons) in Software Engineering</h3>
-            <p><strong>Open University of Sri Lanka (OUSL)</strong> | 2023 – Expected 2027</p>
-            <p><em>Current Status: 3rd Year Undergraduate</em></p>
-            <p>Relevant Coursework: Data Structures, Python, Android Design, DBMS.</p>
-        </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects-section">
-        <h2>Technical Projects</h2>
-        <div class="project-grid">
-            <div class="card">
-                <div class="card-header">
-                    <h3>CashTag</h3>
-                    <span class="tech-stack">Android | Java | OCR</span>
+                    <!-- Skills List -->
+                    <div class="skills">
+                        <h3><i class="fas fa-code"></i> Technical Skills</h3>
+                        <p class="skills-desc">Here are a few technologies I've been working with recently:</p>
+                        <div class="skills-container">
+                            <!-- Add or remove skill tags below -->
+                            <div class="skill-tag">Java</div>
+                            <div class="skill-tag">Python</div>
+                            <div class="skill-tag">React.js</div>
+                            <div class="skill-tag">MySQL</div>
+                            <div class="skill-tag">Android Studio</div>
+                            <div class="skill-tag">HTML5</div>
+                            <div class="skill-tag">CSS3 (Grid/Flexbox)</div>
+                            <div class="skill-tag">JavaScript (ES6+)</div>
+                        </div>
+                    </div>
                 </div>
-                <ul>
-                    <li>Mobile Expense Tracker with OCR support to automate bill reading.</li>
-                    <li>Designed UI/UX and implemented local data storage for offline use.</li>
-                </ul>
-                <a href="https://github.com/Madhusha2003" class="btn">View on GitHub</a>
             </div>
+        </section>
 
-            <div class="card">
-                <div class="card-header">
-                    <h3>DineEase</h3>
-                    <span class="tech-stack">React.js | Tailwind | MySQL</span>
+        <!-- ==============================================
+             PROJECTS SECTION
+             ============================================== -->
+        <section id="projects" class="section alt-bg">
+            <div class="section-content">
+                <h2 class="section-title">Technical Projects</h2>
+                <div class="project-grid">
+
+                    <!-- PROJECT CARD 1 -->
+                    <article class="card">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <i class="fas fa-folder-open folder-icon"></i>
+                                <div class="card-links">
+                                    <a href="https://github.com/Madhusha2003" target="_blank"
+                                        aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="card-title">CashTag</h3>
+                            <div class="card-desc">
+                                <p>Mobile Expense Tracker with OCR support to automate bill reading. Designed UI/UX and
+                                    implemented local data storage for seamless offline use.</p>
+                            </div>
+                        </div>
+                        <ul class="tech-stack">
+                            <li>Android</li>
+                            <li>Java</li>
+                            <li>OCR</li>
+                        </ul>
+                    </article>
+
+                    <!-- PROJECT CARD 2 -->
+                    <article class="card">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <i class="fas fa-folder-open folder-icon"></i>
+                                <div class="card-links">
+                                    <a href="https://github.com/Madhusha2003" target="_blank"
+                                        aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="card-title">DineEase</h3>
+                            <div class="card-desc">
+                                <p>Web-Based Restaurant System for management and reservations. Normalized MySQL
+                                    database for efficient menu and order handling.</p>
+                            </div>
+                        </div>
+                        <ul class="tech-stack">
+                            <li>React.js</li>
+                            <li>Tailwind</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </article>
+
+                    <!-- ADD MORE PROJECT CARDS HERE BY COPYING THE STRUCTURE ABOVE -->
+
                 </div>
-                <ul>
-                    <li>Web-Based Restaurant System for management and reservations.</li>
-                    <li>Normalized MySQL database for efficient menu and order handling.</li>
-                </ul>
-                <a href="https://github.com/Madhusha2003" class="btn">View on GitHub</a>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-
-    <footer id="contact">
+    <!-- ==============================================
+         FOOTER & CONTACT SECTION
+         ============================================== -->
+    <footer id="contact" class="footer">
         <div class="footer-content">
-            <h2>Let's Connect</h2>
-            <p>Currently seeking Internship opportunities for 2026</p>
+            <h2 class="footer-title">Let's Connect</h2>
+            <p>Currently seeking Internship opportunities for 2026. My inbox is always open.</p>
 
             <div class="social-links">
-                <a href="https://github.com/Madhusha2003" target="_blank" class="social-icon">
+                <a href="https://github.com/Madhusha2003" target="_blank" class="social-icon" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/madhusha-nirmal-815b50269" target="_blank" class="social-icon">
+                <a href="https://www.linkedin.com/in/madhusha-nirmal-815b50269" target="_blank" class="social-icon"
+                    aria-label="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://wa.me/94786946823" target="_blank" class="social-icon">
+                <a href="https://wa.me/94786946823" target="_blank" class="social-icon" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 K.G.M. Nirmal | Built with <i class="fas fa-heart" style="color: #e74c3c;"></i> in Sri
-                    Lanka</p>
+                <p>&copy; 2026 K.G.M. Nirmal | Built with <i class="fas fa-heart heart-icon"></i> in Sri Lanka</p>
             </div>
         </div>
     </footer>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="app.js"></script>
 </body>
