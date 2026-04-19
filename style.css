@@ -610,3 +610,83 @@ ul {
         padding: 15px;
     }
 }
+
+/* =========================
+   DOWNLOADS PAGE STYLES
+========================= */
+
+.downloads-header {
+    text-align: center;
+    padding: 100px 20px 40px;
+}
+
+.downloads-header h1 {
+    font-size: 3rem;
+    color: var(--text-bright);
+}
+
+.downloads-header p {
+    color: var(--text-muted);
+}
+
+/* container */
+.downloads-container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* reuse your existing card style but ensure consistency */
+.downloads-container .card {
+    border: 1px solid transparent;
+    background:
+        var(--grad-visible-card) padding-box,
+        linear-gradient(135deg, #ff8103, #ff1c6a, #9b04db) border-box;
+
+    border-radius: var(--border-radius);
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: 0.3s ease;
+}
+
+.downloads-container .card:hover {
+    transform: translateY(-6px);
+}
+
+/* button */
+.btn-download {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 10px 14px;
+
+    background: var(--bg-light);
+    border: 1px solid var(--bg-lighter);
+
+    color: var(--text-bright);
+    text-decoration: none;
+    border-radius: 6px;
+
+    transition: 0.3s;
+    font-family: var(--font-mono);
+}
+
+.btn-download:hover {
+    background: var(--grad-text);
+    color: black;
+    font-weight: bold;
+    border: none;
+}
+
+/* small tag */
+.tag {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
