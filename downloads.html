@@ -6,9 +6,10 @@
 
 <title>Downloads | Nirmal</title>
 
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <link rel="stylesheet" href="style.css">
-
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,26 +19,65 @@
 
 <body>
 
-<header class="downloads-header">
-    <h1>📦 Downloads</h1>
-    <p>Apps, tools & projects I’ve built</p>
-</header>
+    <nav class="nav-downloads">
+        <a href="index.html" class="back-link"><i class="fas fa-home"></i> Back to Home</a>
+    </nav>
 
-<div class="downloads-container">
+    <header class="downloads-header">
+        <h1>📦 Downloads</h1>
+        <p>Apps, tools & projects I’ve built</p>
+    </header>
 
-    <div class="card">
-        <h3>CashTag</h3>
-        <p>Smart expense tracker with OCR receipt scanning</p>
-        <div class="tag">Android • Java • ML Kit</div>
+    <div class="category-section">
+        <h2 class="category-title"><i class="fas fa-mobile-alt"></i> Apps</h2>
+        <div class="downloads-container" style="padding-top: 0;">
+            <div class="card">
+                <h3 class="cashtag-header">CashTag</h3>
+                <p>Smart expense tracker with OCR receipt scanning</p>
+                <div class="tag">Android • Java • ML Kit</div>
+                <a class="btn-download" href="downloads/cashTag.html" target="_blank">
+                    Go to download page
+                </a>
+            </div>
 
-        <a class="btn-download"
-           href="downloads/cashTag.html"
-           target="_blank">
-            ⬇ Download APK
-        </a>
+            <div class="card">
+                <h3 class="voltplan-header">VoltPlan SL</h3>
+                <p>Smart Electricity Budgeting & Tariff Optimizer</p>
+                <div class="tag">Flutter • Hive • Firebase</div>
+                <a class="btn-download" href="downloads/voltPlan.html" target="_blank">
+                    Go to download page
+                </a>
+            </div>
+        </div>
     </div>
 
-</div>
+    <div class="category-section">
+        <h2 class="category-title"><i class="fas fa-tools"></i> Tools</h2>
+        <div class="downloads-container" style="padding-top: 0; display: block;">
+            <p style="color: var(--text-muted); font-size: 0.95rem;">No tools available at the moment. Check back later!</p>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2 class="category-title"><i class="fas fa-laptop-code"></i> Software</h2>
+        <div class="downloads-container" style="padding-top: 0;">
+            <div class="card">
+                <h3 class="dineease-header">DineEase</h3>
+                <p>Digital Restaurant Order Management System</p>
+                <div class="tag">Electron • Node.js • Prisma</div>
+                <a class="btn-download" href="downloads/dineEase.html" target="_blank">
+                    Go to download page
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2 class="category-title"><i class="fas fa-globe"></i> Web Pages</h2>
+        <div class="downloads-container" style="padding-top: 0; display: block;">
+            <p style="color: var(--text-muted); font-size: 0.95rem;">No web pages available at the moment. (See 'Projects' on the home page for web demos!)</p>
+        </div>
+    </div>
 
 </body>
 </html>
