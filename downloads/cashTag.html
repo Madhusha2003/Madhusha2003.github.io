@@ -32,9 +32,122 @@
             box-sizing: border-box;
         }
 
+        .page-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            padding-top: 40px;
+        }
+
+        .showcase-container {
+            flex: 1;
+            display: none;
+            max-width: 380px;
+            position: sticky;
+            top: 40px;
+        }
+
+        @media (min-width: 1200px) {
+            .showcase-container {
+                display: block;
+            }
+        }
+
+        /* Slideshow CSS */
+        .slideshow {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9/16;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: slide 12s infinite ease-in-out;
+        }
+
+        .slide {
+            width: 33.333%;
+            height: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0%, 20% { transform: translateX(0); }
+            33%, 53% { transform: translateX(-33.333%); }
+            66%, 86% { transform: translateX(-66.666%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Video Container CSS */
+        .video-box {
+            width: 100%;
+            aspect-ratio: 9/16;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .video-box video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #0d1117, #161b22);
+            color: #8b949e;
+            gap: 15px;
+        }
+
+        .video-placeholder i {
+            font-size: 3rem;
+            color: var(--accent);
+        }
+
+        .showcase-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
         .wrapper {
             max-width: 550px;
             width: 100%;
+            position: relative;
+            z-index: 2;
         }
 
         .nav {
@@ -190,47 +303,79 @@
 
 <body>
 
-    <div class="wrapper">
-        <div class="nav">
-            <a href="../downloads.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Downloads</a>
+    <div class="page-container">
+        <!-- Left: Slideshow -->
+        <div class="showcase-container">
+            <h3 class="showcase-title"><i class="fas fa-images"></i> Screenshots</h3>
+            <div class="slideshow">
+                <div class="slides">
+                    <div class="slide"><img src="../assets/showcase/placeholder.jpg" alt="Slide 1"></div>
+                    <div class="slide"><img src="../assets/showcase/placeholder.jpg" alt="Slide 2"></div>
+                    <div class="slide"><img src="../assets/showcase/placeholder.jpg" alt="Slide 3"></div>
+                </div>
+            </div>
         </div>
 
-        <div class="header">
-            <div class="icon"><i class="fas fa-wallet"></i></div>
-            <h1 class="title">CashTag</h1>
-            <p class="desc">Smart Expense Manager with OCR receipt scanning and offline support.</p>
+        <!-- Center: Current Content -->
+        <div class="wrapper">
+            <div class="nav">
+                <a href="../downloads.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Downloads</a>
+            </div>
+
+            <div class="header">
+                <div class="icon"><i class="fas fa-wallet"></i></div>
+                <h1 class="title">CashTag</h1>
+                <p class="desc">Smart Expense Manager with OCR receipt scanning and offline support.</p>
+            </div>
+
+            <div class="card">
+                <div class="status-badge"><i class="fas fa-code-branch"></i> Pre-Release</div>
+                <div class="version">Version 1.0.1 • Android APK</div>
+
+                <a href="https://github.com/Madhusha2003/CashTag/releases/" class="btn" target="_blank">
+                    <i class="fas fa-download"></i> Download APK
+                </a>
+                <div class="req">Requires Android 8.0 or higher</div>
+            </div>
+
+            <div class="features">
+                <h3>Key Features</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Manual expense entry and ML Kit powered OCR receipt scanning.</li>
+                    <li><i class="fas fa-check"></i> Save specific shop locations using Google Maps integration.</li>
+                    <li><i class="fas fa-check"></i> Ability to set payment reminders.</li>
+                    <li><i class="fas fa-check"></i> Visual dashboard for intuitive spending analysis.</li>
+                </ul>
+            </div>
+
+            <div class="future_improvements">
+                <h3>Future Improvements</h3>
+                <ul>
+                    <li><i class="fas fa-clock"></i> Will add more features in the future.</li>
+
+                </ul>
+            </div>
+
+            <div class="footer">
+                Licensed under Polyform Non-Commercial License 1.0.0
+            </div>
         </div>
 
-        <div class="card">
-            <div class="status-badge"><i class="fas fa-code-branch"></i> Pre-Release</div>
-            <div class="version">Version 1.0.1 • Android APK</div>
-
-            <a href="https://github.com/Madhusha2003/CashTag/releases/" class="btn" target="_blank">
-                <i class="fas fa-download"></i> Download APK
-            </a>
-            <div class="req">Requires Android 8.0 or higher</div>
-        </div>
-
-        <div class="features">
-            <h3>Key Features</h3>
-            <ul>
-                <li><i class="fas fa-check"></i> Manual expense entry and ML Kit powered OCR receipt scanning.</li>
-                <li><i class="fas fa-check"></i> Save specific shop locations using Google Maps integration.</li>
-                <li><i class="fas fa-check"></i> Ability to set payment reminders.</li>
-                <li><i class="fas fa-check"></i> Visual dashboard for intuitive spending analysis.</li>
-            </ul>
-        </div>
-
-        <div class="future_improvements">
-            <h3>Future Improvements</h3>
-            <ul>
-                <li><i class="fas fa-clock"></i> Will add more features in the future.</li>
-
-            </ul>
-        </div>
-
-        <div class="footer">
-            Licensed under Polyform Non-Commercial License 1.0.0
+        <!-- Right: Video Demo -->
+        <div class="showcase-container">
+            <h3 class="showcase-title"><i class="fas fa-play-circle"></i> Demo Video</h3>
+            <div class="video-box">
+                <div class="video-placeholder">
+                    <i class="fas fa-video"></i>
+                    <span>Preview Available Soon</span>
+                </div>
+                <!-- 
+                <video controls autoplay muted loop>
+                    <source src="../assets/videos/cashtag_demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video> 
+                -->
+            </div>
         </div>
     </div>
 

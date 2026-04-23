@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "Open index.html (InPrivate)",
+      "file": "d:\\Projects\\MyPortofolio\\Madhusha2003.github.io\\index.html",
+      "runtimeArgs": [
+        "--inprivate"
+      ]
+    },
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "Open index.html (Guest Mode)",
+      "file": "d:\\Projects\\MyPortofolio\\Madhusha2003.github.io\\index.html",
+      "runtimeArgs": [
+        "--guest"
+      ]
+    }
+  ]
+}
