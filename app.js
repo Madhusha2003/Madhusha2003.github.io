@@ -167,10 +167,50 @@ function initTerminal() {
 
 
 /* =========================================
-   PART 4: INIT ALL
+   PART 4: PROJECT FILTERS
+   ========================================= */
+function initProjectFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.card');
+
+    if (!filterButtons.length || !projectCards.length) return;
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active button state
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            // Filter cards with a small animation delay
+            projectCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                
+                if (filterValue === 'all' || filterValue === category) {
+                    card.classList.remove('hidden');
+                    // Add a slight fade-in effect
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(10px)';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 10);
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+}
+
+
+/* =========================================
+   PART 5: INIT ALL
    ========================================= */
 document.addEventListener('DOMContentLoaded', () => {
     initParticles();
     initTypewriter();
     initTerminal();
+    initProjectFilters();
 });

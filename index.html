@@ -116,10 +116,20 @@
         <section id="projects" class="section alt-bg">
             <div class="section-content">
                 <h2 class="section-title">Technical Projects</h2>
+                
+                <!-- Project Filter -->
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all"><i class="fas fa-th-large"></i> All</button>
+                    <button class="filter-btn" data-filter="java"><i class="fab fa-java"></i> Java</button>
+                    <button class="filter-btn" data-filter="react"><i class="fab fa-react"></i> React.js</button>
+                    <button class="filter-btn" data-filter="flutter"><i class="fas fa-mobile-alt"></i> Flutter</button>
+                    <button class="filter-btn" data-filter="python"><i class="fab fa-python"></i> Python</button>
+                </div>
+
                 <div class="project-grid">
 
                     <!-- PROJECT CARD 1 -->
-                    <article class="card">
+                    <article class="card" data-category="java">
                         <div class="card-content">
                             <div class="card-header">
                                 <i class="fas fa-folder-open folder-icon"></i>
@@ -145,7 +155,7 @@
                     </article>
 
                     <!-- PROJECT CARD 2 -->
-                    <article class="card">
+                    <article class="card" data-category="react">
                         <div class="card-content">
                             <div class="card-header">
                                 <i class="fas fa-folder-open folder-icon"></i>
@@ -171,7 +181,7 @@
                     </article>
 
                     <!-- PROJECT CARD 3 -->
-                    <article class="card">
+                    <article class="card" data-category="flutter">
                         <div class="card-content">
                             <div class="card-header">
                                 <i class="fas fa-folder-open folder-icon"></i>
@@ -194,6 +204,58 @@
                             <li>Dart</li>
                             <li>Firestore</li>
                             <li>Hive</li>
+                        </ul>
+                    </article>
+
+                    <!-- PROJECT CARD 4 -->
+                    <article class="card" data-category="python">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <i class="fas fa-folder-open folder-icon"></i>
+                                <div class="card-links">
+                                    <a href="https://github.com/Madhusha2003/Melodius" target="_blank"
+                                        aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="card-title">Melodius</h3>
+                            <div class="card-desc">
+                                <p>Modern Desktop Music Player for Windows with a reactive UI. Features a built-in equalizer, 
+                                    smart port detection, and a portable engine for zero-dependency use.</p>
+                                <a href="downloads/melodius.html" class="btn-download"
+                                    style="font-size: 0.85rem; padding: 6px 12px; margin-top: 15px;"><i
+                                        class="fas fa-info-circle"></i> More Info</a>
+                            </div>
+                        </div>
+                        <ul class="tech-stack">
+                            <li>Python</li>
+                            <li>FastAPI</li>
+                            <li>Reflex</li>
+                            <li>SQLite</li>
+                        </ul>
+                    </article>
+
+                    <!-- PROJECT CARD 5 -->
+                    <article class="card" data-category="java">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <i class="fas fa-folder-open folder-icon"></i>
+                                <div class="card-links">
+                                    <a href="https://github.com/Madhusha2003/SinhaKeyboard" target="_blank"
+                                        aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="card-title">Sinha Keyboard</h3>
+                            <div class="card-desc">
+                                <p>Modern, lightweight, and phonetic Sinhala keyboard for Android. Features an expansive 2000+ entry phonetic dictionary and dynamic Shift states for fast typing.</p>
+                                <a href="downloads/sinhaKeyboard.html" class="btn-download"
+                                    style="font-size: 0.85rem; padding: 6px 12px; margin-top: 15px;"><i
+                                        class="fas fa-info-circle"></i> More Info</a>
+                            </div>
+                        </div>
+                        <ul class="tech-stack">
+                            <li>Android</li>
+                            <li>Kotlin</li>
+                            <li>InputMethodService</li>
                         </ul>
                     </article>
 
