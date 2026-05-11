@@ -132,7 +132,7 @@ function initTerminal() {
 
     resume: () => {
         typeThen("Downloading resume...", () => {
-            window.open("assets/MadhushaNirmalCV.pdf");
+            window.open("assets/MadhushaNirmalCV_1.pdf");
         });
     },
 
