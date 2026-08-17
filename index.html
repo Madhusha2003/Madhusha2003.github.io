@@ -40,26 +40,11 @@
     <header id="home" class="hero">
 
         <canvas id="bg-canvas"></canvas>
-        <!--
-        <div class="hero-content">
-            <div class="terminal-box">
-                <div class="terminal-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <div class="terminal-title">guest@nirmal-portfolio:~</div>
-                </div>
-                <div class="terminal-body">
-                    <p class="prompt">$ whoami</p>
-                    <p class="output text-highlight">Hi, I'm MADHUSHA NIRMAL</p>
-                    <p class="prompt">$ get_title</p>
-                    <p class="output typing-text" id="typewriter"></p>
-                    <p class="prompt">$ <input type="text" id="terminalInput" autocomplete="off" autofocus></p>
-                    <div id="terminalOutput"></div>
-                    
-                </div>
-            </div>
-        </div> -->
+
+        <canvas id="laptop-screen-canvas" width="1280" height="720" style="display: none;"></canvas>
+
+        <input type="text" id="terminal-hidden-input" autocomplete="off" autofocus style="position: absolute; opacity: 0; pointer-events: none;">
+    
     </header>
 
     <main>
@@ -298,7 +283,7 @@
     <script src="https://cdn.jsdelivr.net/npm/meshoptimizer/meshopt_decoder.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="three-bg.js"></script>
-    <!-- <script src="app.js"></script> -->
+    <script src="app.js"></script>
 </body>
 
 </html>

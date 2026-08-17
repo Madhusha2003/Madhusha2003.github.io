@@ -3,7 +3,8 @@
    ========================================= */
 (function initThreeBackground() {
     const canvas = document.getElementById('bg-canvas');
-    if (!canvas) return;
+    const screenCanvas = document.getElementById('laptop-screen-canvas');
+    if (!canvas || !screenCanvas) return;
 
     // 1. Scene, Camera, Renderer
     const scene = new THREE.Scene();
@@ -59,7 +60,89 @@
     const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
     scene.add(particleSystem);
 
-    // 4. Load Custom 3D Laptop Model
+    // Dynamic screen texture for laptop display
+    const screenCtx = screenCanvas.getContext('2d');
+    const screenTexture = new THREE.CanvasTexture(screenCanvas);
+    screenTexture.flipY = false;
+
+    let terminalLines = [
+        { text: "$ whoami", color: "#32d74b" },
+        { text: "Hi, I'm MADHUSHA NIRMAL", color: "#ffffff" },
+        { text: "$ get_email", color: "#32d74b" },
+        { text: "kgmnirmal14@gmail.com", color: "#9d0aff" }
+    ];
+    let currentInputText = "";
+    let cursorVisible = true;
+
+    // Terminal Screen 2D Drawing Engine
+    function renderTerminalScreen() {
+        screenCtx.clearRect(0, 0, screenCanvas.width, screenCanvas.height);
+
+        // Terminal Background Glass Window (Translucent so wallpaper shows slightly)
+        screenCtx.fillStyle = "rgba(0, 0, 0, 0.6)";
+        screenCtx.fillRect(40, 40, screenCanvas.width - 80, screenCanvas.height - 60 );
+
+        // Window Header Bar
+        screenCtx.fillStyle = "rgba(25, 25, 30, 0.95)";
+        screenCtx.fillRect(20, 20, screenCanvas.width - 40, 50);
+
+        // Window Dots
+        screenCtx.fillStyle = "#ff453a";
+        screenCtx.beginPath(); screenCtx.arc(50, 45, 8, 0, Math.PI * 2); screenCtx.fill();
+        screenCtx.fillStyle = "#ffd60a";
+        screenCtx.beginPath(); screenCtx.arc(75, 45, 8, 0, Math.PI * 2); screenCtx.fill();
+        screenCtx.fillStyle = "#32d74b";
+        screenCtx.beginPath(); screenCtx.arc(100, 45, 8, 0, Math.PI * 2); screenCtx.fill();
+
+        // Terminal Title
+        screenCtx.font = "bold 20px monospace";
+        screenCtx.fillStyle = "#a3a3a3";
+        screenCtx.fillText("guest@nirmal-portfolio:~", 130, 52);
+
+        // Terminal Output History
+        let startY = 120;
+        screenCtx.font = "bold 26px monospace";
+        
+        terminalLines.slice(-7).forEach((line) => {
+            screenCtx.fillStyle = line.color;
+            screenCtx.fillText(line.text, 50, startY);
+            startY += 45;
+        });
+
+        // Active Interactive Input Line
+        screenCtx.fillStyle = "#32d74b";
+        screenCtx.fillText("$ " + currentInputText + (cursorVisible ? "█" : " "), 50, startY);
+
+        screenTexture.needsUpdate = true;
+    }
+
+    renderTerminalScreen();
+
+    // Blinking Cursor Timer (500ms)
+    setInterval(() => {
+        cursorVisible = !cursorVisible;
+        renderTerminalScreen();
+    }, 500);
+
+    // Global Terminal Bridge for app.js
+    window.terminal3D = {
+        updateInput: (text) => {
+            currentInputText = text;
+            renderTerminalScreen();
+        },
+        pushLine: (text, color = "#ffffff") => {
+            terminalLines.push({ text, color });
+            if (terminalLines.length > 20) terminalLines.shift();
+            renderTerminalScreen();
+        },
+        clear: () => {
+            terminalLines = [];
+            currentInputText = "";
+            renderTerminalScreen();
+        }
+    };
+
+    // Load Custom 3D Laptop Model
     const laptopModel = new THREE.Group();
     const globes = new THREE.Group();
     scene.add(laptopModel);
@@ -78,6 +161,7 @@
             const laptopBase = ImportedScene.getObjectByName('_LaptopBase');
             const laptopKeyBoard = ImportedScene.getObjectByName('_KeyBoard');
             const laptopLidControl = ImportedScene.getObjectByName('_LaptopLidControl');
+            const laptopScreen = ImportedScene.getObjectByName('Laptop_Screen');
             const globe = ImportedScene.getObjectByName('_Sphere');
 
             if (laptopBase) laptopModel.add(laptopBase);
@@ -85,6 +169,15 @@
             if (laptopLidControl) laptopModel.add(laptopLidControl);
             if (globe) globes.add(globe);
 
+            if (laptopScreen) {
+                laptopScreen.material = new THREE.MeshBasicMaterial({ 
+                    map: screenTexture,
+                    transparent: true,
+                    opacity: 1.0,
+                    side: THREE.DoubleSide,
+                    depthWrite: false
+                });
+            }
             // Fix backfaces and missing normals
             laptopModel.traverse((child) => {
                 if (child.isMesh && child.material) {
@@ -126,7 +219,7 @@
 
             // Angle for portfolio presentation
             laptopModel.rotation.set(0.3, -0.4, 0);
-            laptopModel.position.set(0, -12, 0);
+            laptopModel.position.set(0, -24, 0);
             initialLaptopY = laptopModel.position.y;
 
             globe.rotation.set(0, 0, 0);
